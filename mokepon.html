@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>MOKEPON</title>
+    <script src="./js/mokepon.js"></script>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1>
+        <span class="title-text">MOKEPON</span>
+        <div class="title-emoji">🔥💧🌎</div>
+    </h1>
+    <!--La sección es para dividir como si fuera bloques-->
+    <section id="seleccionar-mascota">
+        <h2>Elige una mascota</h2>
+        <div class="mascota-opciones">
+            <div class="mascota-card">
+                <input type="radio" name="mascota" id="hipodoge" />
+                <label for="hipodoge" class="mascota-label">
+                    <img src="./imagenes/Personaje_Agua.png" alt="Hipodoge" class="mascota-img" />
+                    <span>Hipodoge</span>
+                </label>
+            </div>
+            <div class="mascota-card">
+                <input type="radio" name="mascota" id="capipepo" />
+                <label for="capipepo" class="mascota-label">
+                    <img src="./imagenes/Personaje_Tierra.png" alt="Capipepo" class="mascota-img" />
+                    <span>Capipepo</span>
+                </label>
+            </div>
+            <div class="mascota-card">
+                <input type="radio" name="mascota" id="ratigueya" />
+                <label for="ratigueya" class="mascota-label">
+                    <img src="./imagenes/Personaje_Fuego.png" alt="Ratigueya" class="mascota-img" />
+                    <span>Ratigueya</span>
+                </label>
+            </div>
+        </div>
+        <button id="boton-mascota" class="btn-primary">Seleccionar</button>
+    </section>
+
+    <section id="seleccionar-ataque">
+        <div class="estado-juego">
+            <div class="jugador-visual mascota-visual">
+                <img id="img-mascota-jugador" src="" alt="Tu mascota" class="mascota-visual-img" />
+                <div class="explosion" id="explosion-jugador">
+                    <img src="./imagenes/explosion.gif" alt="Explosión" />
+                </div>
+                <p>Tu mascota <span id="mascota-jugador">Mascota Vidas: </span></p>
+                <p class="vidas">Vidas: <span id="vidas-jugador">3</span></p>
+            </div>
+            <div class="enemigo-visual mascota-visual">
+                <img id="img-mascota-enemigo" src="" alt="Mascota enemiga" class="mascota-visual-img" />
+                <div class="explosion" id="explosion-enemigo">
+                    <img src="./imagenes/explosion.gif" alt="Explosión" />
+                </div>
+                <p>La mascota del enemigo <span id="mascota-enemigo">Mascota Vidas: </span></p>
+                <p class="vidas">Vidas: <span id="vidas-enemigo">3</span></p>
+            </div>
+
+
+        </div>
+        <h2>Elige tu ataque</h2>
+        <div class="botones-ataque">
+            <div id="ataque-fuego" class="ataque-img">
+                <img src="./imagenes/Fuego.png" alt="Fuego" />
+            </div>
+            <div id="ataque-agua" class="ataque-img">
+                <img src="./imagenes/Agua.png" alt="Agua" />
+            </div>
+            <div id="ataque-tierra" class="ataque-img">
+                <img src="./imagenes/Tierra.png" alt="Tierra" />
+            </div>
+        </div>
+
+    </section>
+
+    <section id="mensajes" class="estado-juego">
+
+    </section>
+    <section id="resultado-final" class="resultado-final"></section>
+
+    <section id="reiniciar">
+        <button id="boton-reiniciar" class="btn-primary">Reiniciar</button>
+    </section>
+
+</body>
+
+<br>
+<footer>Tecnm campus Pachuca - Programación Web - T2 - Axel Llanderal Arteaga - 2025</footer><br />
+
+</html>
