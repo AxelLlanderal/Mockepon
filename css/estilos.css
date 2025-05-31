@@ -1,0 +1,239 @@
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e293b;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    text-align: center; 
+}
+
+h1, h2, h3 {
+    margin: 10px 0;
+    color: #9fffcb;
+}
+
+button {
+    background-color: #00ff88;
+    color: #141d22;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #33ffaa;
+}
+
+section {
+    padding: 20px;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 800px;
+    background-color: #141d22;
+    border: 1px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Visualización constante del jugador y enemigo */
+.jugador-visual, .enemigo-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #141d22;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px;
+}
+
+.mascota-visual-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border: 2px solid #00ff88;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+/* Selección de mascotas en línea */
+.mascota-opciones {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mascota-card {
+    width: 100px;
+    text-align: center;
+    background-color: #1b2735;
+    border: 2px solid #00ff88;
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.3s;
+}
+
+.mascota-card:hover {
+    transform: scale(1.05);
+}
+
+.mascota-img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+/* Estado del juego */
+.estado-juego {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+.estado-juego p {
+    margin: 0;
+    font-size: 16px;
+    color: #9fffcb;
+}
+
+.vidas {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff7a7a;
+}
+
+/* Botones de ataque */
+.botones-ataque {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-ataque {
+    width: 100px;
+}
+
+/* Animación */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+section {
+    animation: aparecer 0.3s ease-in-out;
+}
+/* Animación de combate */
+@keyframes combate {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.mascota-visual-img.combate {
+    animation: combate 1.0s infinite;
+}
+.mascota-visual {
+    position: relative; 
+}
+
+.explosion {
+    position: absolute;
+    top: -50px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    display: none; 
+}
+.ataque-img {
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.ataque-img img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.ataque-img:hover {
+    transform: scale(1.1);
+    border-color: #00ff88;
+}
+/* Estilos para mensajes llamativos */
+#mensajes p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00ff88;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #1b2735;
+    border-radius: 8px;
+    border: 2px solid #00ff88;
+    transition: transform 0.3s ease;
+}
+
+#mensajes p:hover {
+    transform: scale(1.05);
+}
+
+/* Colores específicos para cada resultado */
+#mensajes .ganaste {
+    color: #4caf50;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-color: #4caf50;
+}
+
+#mensajes .perdiste {
+    color: #f44336;
+    background-color: rgba(244, 67, 54, 0.1);
+    border-color: #f44336;
+}
+
+#mensajes .empate {
+    color: #ff9800;
+    background-color: rgba(255, 152, 0, 0.1);
+    border-color: #ff9800;
+}
+
+/* Animaciones para los mensajes */
+@keyframes aparecerMensaje {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#mensajes p {
+    animation: aparecerMensaje 0.5s ease-out;
+}
